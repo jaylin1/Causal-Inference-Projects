@@ -228,23 +228,20 @@ mde_table <- lapply(weeks_range, compute_mde, sd = sd_pre, baseline = baseline_n
 ```
 
 ``` r
-knitr::kable(round(mde_table, 2), caption = "Minimum Detectable Effect by Week")
+(round(mde_table, 2))
 ```
 
-| weeks |    d | mde_units | mde_pct |
-|------:|-----:|----------:|--------:|
-|     3 | 3.07 |      3.52 |    3.35 |
-|     4 | 2.38 |      2.73 |    2.59 |
-|     5 | 2.02 |      2.32 |    2.21 |
-|     6 | 1.80 |      2.06 |    1.96 |
-|     7 | 1.63 |      1.87 |    1.78 |
-|     8 | 1.51 |      1.73 |    1.64 |
-|     9 | 1.41 |      1.61 |    1.53 |
-|    10 | 1.32 |      1.52 |    1.44 |
-|    11 | 1.26 |      1.44 |    1.37 |
-|    12 | 1.20 |      1.37 |    1.30 |
-
-Minimum Detectable Effect by Week
+    ##    weeks    d mde_units mde_pct
+    ## 1      3 3.07      3.52    3.35
+    ## 2      4 2.38      2.73    2.59
+    ## 3      5 2.02      2.32    2.21
+    ## 4      6 1.80      2.06    1.96
+    ## 5      7 1.63      1.87    1.78
+    ## 6      8 1.51      1.73    1.64
+    ## 7      9 1.41      1.61    1.53
+    ## 8     10 1.32      1.52    1.44
+    ## 9     11 1.26      1.44    1.37
+    ## 10    12 1.20      1.37    1.30
 
 ``` r
 ggplot(mde_table, aes( x= weeks, y= mde_pct)) + 
